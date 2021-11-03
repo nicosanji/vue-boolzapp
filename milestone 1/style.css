@@ -39,12 +39,12 @@
     border-radius: 0.25rem;
 }
 
-.sent{
+.sent {
     background-color: #dcf8c6;
     margin-right: 50px;
 }
 
-.received{
+.received {
     background-color: white;
     margin-left: 50px;
 }
@@ -52,22 +52,22 @@
 
 
 /* TESTI (color/size) */
-.navbar-text-blue{
+.navbar-text-blue {
     color: #34b7f1;
 }
 
-.my-font-small{
+.my-font-small {
     font-size: 12px;
 }
 
-.my-font-smallest{
+.my-font-smallest {
     font-size: 10px;
 }
 /*////////////////////*/
 
 
 /* PLACEHOLDER / ICONE */
-input::placeholder{
+input::placeholder {
     font-size: 12px;
 }
 
