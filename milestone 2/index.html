@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boolzapp ms.1</title>
+    <title>Boolzapp ms.2</title>
     <!-- Link FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!-- Link Bootstrap -->
@@ -32,11 +32,11 @@
                     <div class="navbar-bg-gray flex-shrink-0 py-1">
                         <div class="d-flex justify-content-around" style="height: 50px;">
                             <div class="col-2 text-center">
-                                <img src="../img/avatar_io.jpg" alt="" class="rounded-pill overflow-hidden"
+                                <img src="../img/avatar_8.jpg" alt="" class="rounded-pill overflow-hidden"
                                     style="height: 100%;">
                             </div>
                             <div class="col-6 d-flex align-items-center">
-                                <p class="fw-bold mb-0">Nome utente</p>
+                                <p class="fw-bold mb-0">Nicosanji</p>
                             </div>
                             <div class="col-4 d-flex justify-content-end align-items-center pe-2">
                                 <a href="#" class="px-2 text-secondary"><i class="fas fa-circle-notch"></i></a>
@@ -66,9 +66,9 @@
                     </div>
                     <!-- sx elenco chat -->
                     <div class="d-flex flex-column flex-grow-1 overflow-auto">
-                        <div class="border-bottom p-2" v-for="element in contacts">
-                            <!-- v-for ciclo ogni contatto -->
-                            <div class="d-flex" style="height: 50px;">
+                        <!-- v-for ciclo ogni contatto -->
+                        <div class="border-bottom p-2" v-for="(element, i) in contacts">
+                            <div class="d-flex" @click.capture="index = i" style="height: 50px; cursor: pointer;">
                                 <!-- col avatar -->
                                 <div class="col-3 text-center">
                                     <img :src="'../img/avatar' + element.avatar + '.jpg'" alt=""
@@ -77,11 +77,12 @@
                                 <!-- col name + ultimo messaggio -->
                                 <div class="col-6">
                                     <p class="fw-bold mb-0">{{element.name}}</p>
-                                    <p class="my-font-small mb-0 text-secondary">...ultimo messaggio</p>
+                                    <p class="my-font-small mb-0 text-secondary">
+                                        {{element.messages[element.messages.length - 1].text}}</p>
                                 </div>
                                 <!-- col data e ora -->
                                 <div class="col-3 text-end">
-                                    <p class="my-font-small mb-0 text-secondary">...data e ora</p>
+                                    <p class="my-font-smallest mb-0 text-secondary">...data e ora</p>
                                 </div>
                             </div>
                         </div>
@@ -95,13 +96,15 @@
                         <div class="d-flex justify-content-around ps-1" style="height: 50px;">
                             <!-- col avatar -->
                             <div class="col-1 text-center">
-                                <img src="../img/avatar_io.jpg" alt="" class="rounded-pill overflow-hidden"
+                                <img v-bind:src="'../img/avatar' + contacts[index].avatar + '.jpg'"
+                                    v-bind:alt="'avatar' + contacts[index].avatar" class="rounded-pill overflow-hidden"
                                     style="height: 100%;">
                             </div>
                             <!-- col name + data e ora -->
                             <div class="col-7">
-                                <p class="fw-bold mb-0">...Nome contatto</p>
-                                <p class="my-font-small text-secondary">Ultimo accesso oggi alle ...data e ora</p>
+                                <p class="fw-bold mb-0">{{contacts[index].name}}</p>
+                                <p class="my-font-small text-secondary">Ultimo accesso oggi alle
+                                    {{contacts[index].messages[contacts[index].messages.length - 1].date}}</p>
                             </div>
                             <!-- col icone -->
                             <div class="col-4 d-flex justify-content-end align-items-center pe-2">
@@ -114,19 +117,21 @@
                     <!-- dx chat box -->
                     <div class="main-bg-image flex-grow-1 overflow-auto">
                         <!-- messaggio inviato (sent) -->
-                        <div class="text-end">
-                            <div class="sent msg-box text-start">
-                                <p>...messaggio inviato</p>
-                                <p class="my-font-smallest text-end mb-0 text-secondary">...data e ora</p>
+                        <div v-for="element in contacts[index].messages">
+                            <div v-bind:class="element.status === 'sent' ? 'text-end' : ''">
+                                <div v-bind:class="'text-start msg-box ' + element.status">
+                                    <p>{{element.text}}</p>
+                                    <p class="my-font-smallest text-end mb-0 text-secondary">{{element.date}}</p>
+                                </div>
                             </div>
                         </div>
                         <!-- messaggio ricevuto (received) -->
-                        <div class="text-start">
+                        <!-- <div class="text-start">
                             <div class="received msg-box">
                                 <p>...messaggio ricevuto</p>
                                 <p class="my-font-smallest text-end mb-0 text-secondary">...data e ora</p>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <!-- dx scrivi messaggio e icone -->
                     <div class="flex-shrink-0" style="height: 50px;">

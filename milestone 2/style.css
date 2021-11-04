@@ -1,0 +1,82 @@
+/* SFONDI */
+.main-bg-gray {
+    background-color: #ece5dd;
+}
+
+.main-top-bg-green {
+    z-index: 2;
+    background-color: #128c7e;
+}
+
+.main-bg-image {
+    background-image: url('../../img/mine.jpg');
+}
+
+.navbar-bg-gray {
+    background-color: #f0edea;
+}
+
+.navbar-bg-blue {
+    background-color: #34b7f1;
+}
+/*////////////////////*/
+
+
+/* CONTAINER DI TUTTO */
+.main-container {
+    z-index: 3;
+}
+/*////////////////////*/
+
+
+/* MESSAGGI */
+.msg-box {
+    display: inline-block;
+    max-width: 50%;
+    min-width: 30%;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 0.25rem;
+}
+
+.sent {
+    background-color: #dcf8c6;
+    margin-right: 50px;
+}
+
+.received {
+    background-color: white;
+    margin-left: 50px;
+}
+/*////////////////////*/
+
+
+/* TESTI (color/size) */
+.navbar-text-blue {
+    color: #34b7f1;
+}
+
+.my-font-small {
+    font-size: 12px;
+}
+
+.my-font-smallest {
+    font-size: 10px;
+}
+/*////////////////////*/
+
+
+/* PLACEHOLDER / ICONE */
+input::placeholder {
+    font-size: 12px;
+}
+
+i {
+    cursor: pointer;
+}
+/*////////////////////*/
+
+
+
+
+
