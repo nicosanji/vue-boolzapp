@@ -79,8 +79,16 @@ i {
     cursor: pointer;
 }
 
+.fa-bell-slash {
+    transform: scale(0.8);
+}
+
 i:hover {
     transform: scale(1.5);
+}
+
+.fa-bell-slash:hover {
+    transform: scale(1);
 }
 /*////////////////////*/
 

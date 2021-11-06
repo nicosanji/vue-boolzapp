@@ -95,17 +95,17 @@
                 <div class="col-8 p-0 d-flex flex-column" style="height: 100%;">
                     <!-- dx nome avatar e icone -->
                     <div class="navbar-bg-gray flex-shrink-0 py-1">
-                        <div class="d-flex justify-content-around ps-1" style="height: 50px;">
+                        <div class="d-flex justify-content-around align-items-center ps-1" style="height: 50px;">
                             <!-- col avatar -->
                             <div class="col-1 text-center">
                                 <img v-bind:src="'../img/avatar' + contacts[index].avatar + '.jpg'"
                                     v-bind:alt="'avatar' + contacts[index].avatar" class="rounded-pill overflow-hidden"
-                                    style="height: 100%;">
+                                    style="height: 50px;">
                             </div>
                             <!-- col name + data e ora -->
                             <div class="col-7">
                                 <p class="fw-bold mb-0">{{contacts[index].name}}</p>
-                                <p class="my-font-small text-secondary">Ultimo accesso oggi alle
+                                <p class="my-font-small text-secondary mb-0">Ultimo accesso oggi alle
                                     {{contacts[index].messages[contacts[index].messages.length - 1].date}}</p>
                             </div>
                             <!-- col icone -->
@@ -117,7 +117,7 @@
                         </div>
                     </div>
                     <!-- dx chat box -->
-                    <div class="main-bg-image flex-grow-1 overflow-auto">
+                    <div class="main-bg-image flex-grow-1 overflow-auto py-4">
                         <!-- messaggio inviato (sent) -->
                         <div v-for="element in contacts[index].messages">
                             <div v-bind:class="element.status === 'sent' ? 'text-end' : ''">
@@ -138,7 +138,7 @@
                             <!-- col scrivi un messaggio -->
                             <input type="search" class="col-10 rounded border-0 p-1" placeholder="Scrivi un messaggio"
                                 v-model="myMessage" @keyup.enter="sendMyMessage(index)">
-                            <!-- col icona microphone/send message -->
+                            <!-- col v-if icona microphone/paper-plane  -->
                             <div class="col-1 text-center" v-if='myMessage === "" ' >
                                 <i class="fas fa-microphone text-secondary"></i>
                             </div>
