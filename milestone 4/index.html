@@ -138,9 +138,12 @@
                             <!-- col scrivi un messaggio -->
                             <input type="search" class="col-10 rounded border-0 p-1" placeholder="Scrivi un messaggio"
                                 v-model="myMessage" @keyup.enter="sendMyMessage(index)">
-                            <!-- col icona microphone -->
-                            <div class="col-1 text-center">
+                            <!-- col icona microphone/send message -->
+                            <div class="col-1 text-center" v-if='myMessage === "" ' >
                                 <i class="fas fa-microphone text-secondary"></i>
+                            </div>
+                            <div class="col-1 text-center" v-else @click="sendMyMessage(index)" style="color: #128c7e;">
+                                <i class="fas fa-paper-plane"></i>
                             </div>
                         </div>
                     </div>

@@ -128,7 +128,6 @@ new Vue({
     methods: {
         // invia un messaggio
         sendMyMessage(index) {
-            // day.js.org
             let timestamp = `${new Date().toLocaleDateString().substr(0, 10)} ${new Date().toLocaleTimeString()}`
             this.contacts[index].messages.push({
                 date: timestamp,
@@ -137,7 +136,6 @@ new Vue({
             }),
                 // risposta automatica dopo l'invio del messaggio
                 setTimeout(() => {
-                    // day.js.org
                     let timestamp = `${new Date().toLocaleDateString().substr(0, 10)} ${new Date().toLocaleTimeString()}`
                     this.contacts[index].messages.push({
                         date: timestamp,
