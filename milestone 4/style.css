@@ -78,6 +78,26 @@ input::placeholder {
 i {
     cursor: pointer;
 }
+/*////////////////////*/
+
+/* EFFETTI */
+img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.border-bottom:hover ,.border-bottom:focus {
+    background-color:lightgray;
+}
+
+.msg-box:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.fa-bell-slash:hover {
+    transform: scale(1);
+}
 
 .fa-bell-slash {
     transform: scale(0.8);
@@ -86,12 +106,7 @@ i {
 i:hover {
     transform: scale(1.5);
 }
-
-.fa-bell-slash:hover {
-    transform: scale(1);
-}
 /*////////////////////*/
-
 
 
 

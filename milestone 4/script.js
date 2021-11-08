@@ -35,7 +35,6 @@ new Vue({
         myFilter: "",
         // array principale
         contacts: [
-            // Michele (0)
             {
                 name: 'Michele',
                 avatar: '_1',
@@ -58,7 +57,6 @@ new Vue({
                     }
                 ],
             },
-            // Fabio (1)
             {
                 name: 'Fabio',
                 avatar: '_2',
@@ -81,7 +79,6 @@ new Vue({
                     }
                 ],
             },
-            // Samuele (2)
             {
                 name: 'Samuele',
                 avatar: '_3',
@@ -104,7 +101,6 @@ new Vue({
                     }
                 ],
             },
-            // Luisa (3)
             {
                 name: 'Luisa',
                 avatar: '_6',
@@ -128,7 +124,8 @@ new Vue({
     methods: {
         // invia un messaggio
         sendMyMessage(index) {
-            let timestamp = `${new Date().toLocaleDateString().substr(0, 10)} ${new Date().toLocaleTimeString()}`
+            // dayjs
+            let timestamp = dayjs().format("DD/MM/YYYY HH:mm:ss")
             this.contacts[index].messages.push({
                 date: timestamp,
                 text: this.myMessage,
@@ -136,7 +133,8 @@ new Vue({
             }),
                 // risposta automatica dopo l'invio del messaggio
                 setTimeout(() => {
-                    let timestamp = `${new Date().toLocaleDateString().substr(0, 10)} ${new Date().toLocaleTimeString()}`
+                    // dayjs
+                    let timestamp = dayjs().format("DD/MM/YYYY HH:mm:ss")
                     this.contacts[index].messages.push({
                         date: timestamp,
                         text: 'ok',
